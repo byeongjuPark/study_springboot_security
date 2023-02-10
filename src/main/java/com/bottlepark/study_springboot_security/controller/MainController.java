@@ -13,10 +13,11 @@ public class MainController {
     @GetMapping("/")
     public ModelAndView main(ModelAndView modelAndView){
     Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    String username = null;
         if (principal instanceof UserDetails) {
-        String username = ((UserDetails)principal).getUsername();
+        username = ((UserDetails)principal).getUsername();
         } else {
-        String username = principal.toString();
+        username = principal.toString();
         }
         
 

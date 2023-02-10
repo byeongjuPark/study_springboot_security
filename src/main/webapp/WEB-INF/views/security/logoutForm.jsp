@@ -10,8 +10,7 @@
 <body>
    <div class="container">
     <form class="form-signin" method="post" action="/logout">
-      <h2 class="form-signin-heading">Are you sure you want to log out?</h2>
-<input name="_csrf" type="hidden" value="569b5e94-57d9-4baf-87f6-8841b22519c7">
+      <h2 class="form-signin-heading">Logout</h2>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Log Out</button>
     </form>
   </div>
