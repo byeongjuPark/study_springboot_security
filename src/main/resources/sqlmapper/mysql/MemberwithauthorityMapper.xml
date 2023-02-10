@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Memberwithauthority">
+	<select id="selectByUID" parameterType="String"
+		resultType="Map">
+		SELECT * 
+		FROM MEMBER_WITH_AUTHORITY
+		where 1 = 1
+		and MEMBER_ID = #{username} 
+	</select>
+	<insert id="insertWithUID" parameterType="Map">
+		insert into MEMBER_WITH_AUTHORITY 
+		(MEMBER_SEQ,MEMBER_ID,PASSWORD,NAME,EMAIL,CELLPHONE,AUTHORITY
+		,REGISTER_SEQ,REGISTRY_DATE,MODIFIER_SEQ,MODIFY_DATE) 
+		value
+		(#{USERS_UID},#{username},#{password},#{NAME},'',#{phone},#{role}
+		,'UUID-1111-1111111',now(),'UUID-1111-1111111',now());
+
+	</insert>
+</mapper>
