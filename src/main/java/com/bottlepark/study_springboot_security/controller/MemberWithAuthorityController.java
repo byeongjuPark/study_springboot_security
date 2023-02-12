@@ -26,7 +26,7 @@ public class MemberWithAuthorityController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/joinProc", method = RequestMethod.GET)
+    @RequestMapping(value = "/joinProc", method = RequestMethod.POST)
     public String joinProc(@RequestParam Map params, ModelAndView modelAndView){
         Object result = memberWithAuthorityService.insert(params);
         return "redirect:/";

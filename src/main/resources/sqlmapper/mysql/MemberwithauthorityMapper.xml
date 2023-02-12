@@ -7,6 +7,7 @@
 		FROM MEMBER_WITH_AUTHORITY
 		where 1 = 1
 		and MEMBER_ID = #{username} 
+		<!-- where 1=1 양식만 채울려고...and를 쓰려고 -->
 	</select>
 	<insert id="insertWithUID" parameterType="Map">
 		insert into MEMBER_WITH_AUTHORITY 

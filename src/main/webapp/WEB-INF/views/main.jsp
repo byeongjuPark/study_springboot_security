@@ -22,7 +22,7 @@
     </sec:authorize>
     <sec:authorize access="isAuthenticated()"> <%-- 분기2 로그인 O --%>
         <div>
-            username : ${userDetailsBean.username}, <a href="/logoutForm">Logout</a>
+            username : ${userDetailsBean.username}, Name : ${userDetailsBean.memberName}<a href="/logoutForm">Logout</a>
         </div>
     </sec:authorize>
     

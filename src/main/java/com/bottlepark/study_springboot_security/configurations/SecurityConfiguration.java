@@ -21,10 +21,14 @@ public class SecurityConfiguration {
             // .antMatchers("/").authenticated()   // 로그인 여부만 판단.
             // .antMatchers("/admin").access("hasRole('ROLE_ADMIN')") // 로그인 & 권한
             .antMatchers("/admin").authenticated()
+            .antMatchers("/manager/*").access("hasRole('ROLE_ADMIN' or hasRole('ROLE_MANAGER'))")
+            .antMatchers("/admin/*").access("hasRole('ROLE_ADMIN')")
+
             .anyRequest().permitAll();      // 설정한 URL 이외는 접근 가능(로그인 & 로그아웃).
         
         // 로그인에 대한 부분
         httpSecurity.formLogin().loginPage("/loginForm")
+            .failureUrl("/loginForm?fail=true") // 로그인 실패시
             .loginProcessingUrl("/login")
             .defaultSuccessUrl("/");
         
